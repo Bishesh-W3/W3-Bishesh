@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <p style="background-image: url('i.png');">
+  <title>My Ecommerce Website</title>
+    <link rel="stylesheet" href="styles.css">	
+</head>
+<body>
+    <!-- Header -->
+
+        <t>  <p><h1><sup>Bishesh</sup><sup>-</sup><sub>404 </sub></h1></p></t>
+    <!-- Main Content -->
+    <main>
+        <!-- Featured Products -->
+      <h2></h2>
+    <p>    <div id="product-list">
+           <slide>   <img src="uc.png" height="100" width="150"alt=""></slide>
+            <h3>Pubg Topup</h3>
+            <p>Price: $15</p>
+            <button onclick="addToCart('Pubg Topup', 15)">Add to Cart</button>
+        </div>
+        <div class="product">
+       <img src="ml.png" height="100" width="150"alt="">
+            <h3>MLBB Topup</h3>
+            <p>Price: $5</p>
+            <button onclick="addToCart('MLBB Topup', 5)">Add to Cart</button>
+            </div>
+             <img src="dmd.png" height="100" width="150"alt="">
+            <h3>Freefire Topup</h3>
+            <p>Price: $10</p>
+            <button onclick="addToCart('Freefire Topup', 10)">Add to Cart</button>
+        </div>
+    </main>
+    <footer>
+            <button onclick="addToCart('MLBB Topup', 5)">Add to Cart</button>
+        </div>
+    </main>
+    <!-- Navigation Menu -->
+        <nav>
+            <ul>
+          	
+              
+            </ul>
+        </nav>
+    </header>
+    <!-- Footer -->
+    <footer>
+        <!-- Footer content -->
+        		<li><a href="indx.html">Click Me</a><p>Play Game If you are Bored!!<a></a></li></p>
+    </footer>
+
+    <!-- JavaScript for adding products to cart -->
+    <script>
+        function addToCart(productName, price) {
+            // Retrieve existing cart items from local storage
+            let cartItems = localStorage.getItem('cartItems');
+            cartItems = cartItems ? JSON.parse(cartItems) : [];
+
+            // Add the new item to the cart
+            const newItem = { productName: productName, price: price };
+            cartItems.push(newItem);
+
+            // Store the updated cart items back to local storage
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+            // Provide some visual feedback (optional)
+            alert('Product added to cart!');
+        }
+        
+    </script>
+</body>
+<footer>
+©	All rights reserved
+<p>2024 Bishesh-Cyber.404</p>
+
+	</footer>
+	<footer>
+		Sign In to stay connected with us
+		<p><li><a href="login.html">Click Me</a><a></a></li></p>
+        	<header><body bg colour ="red">  <li><a href="products.html">Products</a></li>
+   <li><a href="cart.html">Cart</a></li>
+</htm>
