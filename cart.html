@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>My Ecommerce Website</h1>
+        <!-- Navigation Menu -->
+        <nav>
+            <ul>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="login.html">Sign In</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Cart Items -->
+        <h2>Cart</h2>
+        <div id="cart-items">
+            <!-- Cart items will be dynamically generated here -->
+        </div>
+        <button onclick="checkout()">Proceed to Checkout</button>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <!-- Footer content -->
+    </footer>
+
+    <!-- JavaScript for displaying cart items -->
+    <script>
+        // Function to retrieve cart items from local storage and display them
+        function displayCartItems() {
+            // Retrieve cart items from local storage
+            let cartItems = localStorage.getItem('cartItems');
+            cartItems = cartItems ? JSON.parse(cartItems) : [];
+
+            // Select the cart items container
+            const cartItemsContainer = document.getElementById('cart-items');
+            cartItemsContainer.innerHTML = ''; // Clear previous content
+
+            // Loop through each cart item and generate HTML to display it
+            cartItems.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.innerHTML = `
+                    <h3>${item.productName}</h3>
+                    <p>Price: $${item.price}</p>
+                `;
+                cartItemsContainer.appendChild(itemElement);
+            });
+        }
+
+        // Function to proceed to checkout
+        function checkout() {
+            // Redirect to the checkout page
+            window.location.href = "checkout.html";
+        }
+
+        // Call the displayCartItems function when the page loads
+        window.onload = displayCartItems;
+    </script>
+</body>
+</html>
